@@ -11,14 +11,22 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "eject": "react-scripts eject",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test:ci": "CI=true react-scripts test --env=jsdom",
+    "lint": "eslint --ext .js,.jsx,.es6 ./src/",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "precommit": "npm run lint && npm run test:ci"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-angular": "^7.1.2",
+    "@commitlint/core": "^7.1.2",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3"
   }
 }
