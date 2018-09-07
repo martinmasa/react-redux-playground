@@ -8,7 +8,11 @@ export default injectGlobal`
     width: 100%;
   }
 
-  body {
+   body {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  #root {
+    min-height: 100vh;
   }
 `;

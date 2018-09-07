@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import HelloApp from './HelloApp';
+
 const AppWrapper = styled.div`
-  color: slategray;
+  display: grid;
+  justify-items: center;
+  grid-gap: 20px;
+  color: #2c3e50;
 `;
 
 class App extends Component {
   render() {
     return (
       <AppWrapper>
-        <h1>Grano Admin</h1>
+        <h1>React Redux Playground</h1>
+        <HelloApp />
       </AppWrapper>
     );
   }

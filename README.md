@@ -1,3 +1,6 @@
-# Grano Admin
 
-Admin app for Grano Foods TZ
+# React Redux Playground
+
+React Redux playground to try out new ideas + tutorials.
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
