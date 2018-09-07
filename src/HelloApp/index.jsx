@@ -1,4 +1,7 @@
 import React from 'react';
+import { createStore } from 'redux';
+
+import reducer from './reducer';
 
 const HelloWorld = ({ tech }) => {
   return (
@@ -8,17 +11,16 @@ const HelloWorld = ({ tech }) => {
   );
 };
 
-
 class HelloApp extends React.Component {
-  state = {
-    tech: 'React'
+  constructor(props) {
+    super(props);
+
+    this.store = createStore(reducer);
   }
 
   render() {
-    const { tech } = this.state;
-
     return (
-      <HelloWorld tech={tech} />
+      <HelloWorld tech={this.store.getState().tech} />
     );
   }
 }
