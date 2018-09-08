@@ -13,7 +13,7 @@ const techList = [
 const HelloWorld = ({ tech }) => {
   return (
     <Hello>
-      Hello World <Tech>{tech}!</Tech>
+      <span>Hello World <Tech>{tech}!</Tech></span>
     </Hello>
   );
 };
@@ -39,7 +39,7 @@ class HelloApp extends React.Component {
 
   render() {
     return (
-      <div>
+      <HelloContainer>
         <HelloWorld tech={this.store.getState().tech} />
         {techList.map(({ key, value }) => (
           <Button
@@ -49,27 +49,37 @@ class HelloApp extends React.Component {
             {value}
           </Button>
         ))}
-      </div>
+      </HelloContainer>
     );
   }
 }
 
 export default HelloApp;
 
+const HelloContainer = styled.main`
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  width: 600px;
+  margin: 0 auto;
+`;
+
 const Hello = styled.div`
   color: #2c3e50;
   font-size: 3em;
-  position: relative;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-areas:
+    ". . ."
+    "bg bg bg";
 
   &:after {
-    position: absolute;
+    grid-area: bg;
     z-index: -1;
     content: "";
-    bottom: -10%;
-    left: 0;
-    height: 40%;
-    width: 100%;
+    height: 15px;
     background: #f0898b;
+    margin-top: -20px;
   }
 `;
 
@@ -93,5 +103,9 @@ const Button = styled.button`
 
   &:hover {
     opacity: 0.95;
+  }
+
+  &:focus {
+    text-decoration: underline;
   }
 `;
