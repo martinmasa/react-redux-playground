@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import _ from 'lodash';
 
 class Sidebar extends React.Component {
   render() {
@@ -11,7 +13,15 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar;
+const mapStateToProps = (state) => {
+  return {
+    contacts: _.values(state.contacts)
+  };
+};
+
+
+const ConnectedSidebar = connect(mapStateToProps)(Sidebar);
+export default ConnectedSidebar;
 
 const Aside = styled.aside`
   background-color: rgba(32, 32, 35, 1);
