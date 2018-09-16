@@ -5,7 +5,9 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
+
 
 import HelloApp from './HelloApp';
 import SkypeyApp from './SkypeyApp';
@@ -26,7 +28,13 @@ const routes = [
 const Home = () => {
   return (
     <HomeContainer>
-      <H1>React Redux Playground</H1>
+      <H1>
+        <FormattedMessage
+          id="home.header"
+          defaultMessage="{tech} Playground!"
+          values={{ tech: 'React Redux' }}
+        />
+      </H1>
       {routes.map((route) => (
         <AppLink key={route.key} to={route.path}>{route.key}</AppLink>
       ))}
