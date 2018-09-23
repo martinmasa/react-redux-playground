@@ -1,21 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import _ from 'lodash';
 
 import Main from '../../components/Main';
 import Sidebar from '../../components/Sidebar';
 
 class Skypey extends React.Component {
   render() {
+    const { contacts } = this.props;
+
     return (
       <SkypeyContainer>
-        <Sidebar />
+        <Sidebar contacts={_.values(contacts)} />
         <Main />
       </SkypeyContainer>
     );
   }
 }
 
-export default Skypey;
+const mapStateToProps = (state) => ({
+  contacts: state.contacts
+});
+
+export default connect(mapStateToProps)(Skypey);
 
 const SkypeyContainer = styled.div`
   display: grid;
