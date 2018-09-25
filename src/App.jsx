@@ -11,12 +11,18 @@ import styled from 'styled-components';
 
 import HelloApp from './HelloApp';
 import SkypeyApp from './SkypeyApp';
+import Random from './RandomStuff';
 
 const routes = [
   {
     key: 'hello',
     path: '/hello',
     component: HelloApp
+  },
+  {
+    key: 'random',
+    path: '/random',
+    component: Random
   },
   {
     key: 'skypey',
@@ -68,7 +74,7 @@ export default App;
 
 const HomeContainer = styled.main`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-gap: 10px 0;
   width: 750px;
   margin: 20px auto;
