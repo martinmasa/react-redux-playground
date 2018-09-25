@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Toggle from './ToggleRP';
+import Portal from './Portal';
 
 class Random extends React.Component {
   render() {
@@ -12,7 +13,14 @@ class Random extends React.Component {
         <Toggle>
           {({ on, toggle }) => (
             <div>
-              {on && <p>Toggle Content using children render props!</p>}
+              {on && (
+                <React.Fragment>
+                  <p>Toggle Content using children render props!</p>
+                  <Portal>
+                    <p>This content is in the portal!</p>
+                  </Portal>
+                </React.Fragment>
+              )}
               <button type="button" onClick={toggle}>Toggle</button>
             </div>
           )}

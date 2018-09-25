@@ -15,4 +15,16 @@ export default injectGlobal`
   #root {
     min-height: 100vh;
   }
+
+  #portal {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+    & > * {
+      background: palegoldenrod;
+      padding: 5px;
+      border-radius: 2px;
+    }
+  }
 `;
