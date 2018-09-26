@@ -1,9 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 
 import Toggle from './ToggleRP';
-import Portal from './Portal';
 import Modal from './Modal';
+
+injectGlobal([
+  `
+  #root {
+    min-height: 100px;
+  }
+`
+]);
 
 class Random extends React.Component {
   render() {
@@ -15,15 +22,12 @@ class Random extends React.Component {
           {({ on, toggle }) => (
             <div>
               {on && (
-                <React.Fragment>
-                  <p>Toggle Content using children render props!</p>
-                  <Portal>
-                    <p>This content is in the portal!</p>
-                  </Portal>
-                </React.Fragment>
+                <Modal on={on} toggle={toggle}>
+                  <h1>Still in a modal</h1>
+                </Modal>
               )}
               <button type="button" onClick={toggle}>
-                Toggle
+                Open
               </button>
             </div>
           )}

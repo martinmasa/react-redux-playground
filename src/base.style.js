@@ -10,21 +10,11 @@ export default injectGlobal`
 
    body {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
   }
 
   #root {
     min-height: 100vh;
-  }
-
-  #portal {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    
-    & > * {
-      background: palegoldenrod;
-      padding: 5px;
-      border-radius: 2px;
-    }
   }
 `;
