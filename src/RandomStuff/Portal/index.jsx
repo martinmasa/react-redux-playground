@@ -12,11 +12,11 @@ class Portal extends React.Component {
 
   componentDidMount = () => {
     modalRoot.appendChild(this.el);
-  }
+  };
 
   componentWillUnmount = () => {
     modalRoot.removeChild(this.el);
-  }
+  };
 
   render() {
     const { children } = this.props;

@@ -13,7 +13,9 @@ const techList = [
 const HelloWorld = ({ tech }) => {
   return (
     <Hello>
-      <span>Hello World <Tech>{tech}!</Tech></span>
+      <span>
+        Hello World <Tech>{tech}!</Tech>
+      </span>
     </Hello>
   );
 };
@@ -42,10 +44,7 @@ class HelloApp extends React.Component {
       <HelloContainer>
         <HelloWorld tech={this.store.getState().tech} />
         {techList.map(({ key, value }) => (
-          <Button
-            key={key}
-            onClick={() => this.setTechnology(value)}
-          >
+          <Button key={key} onClick={() => this.setTechnology(value)}>
             {value}
           </Button>
         ))}
@@ -70,13 +69,13 @@ const Hello = styled.div`
   grid-column: 1 / -1;
   display: grid;
   grid-template-areas:
-    ". . ."
-    "bg bg bg";
+    '. . .'
+    'bg bg bg';
 
   &:after {
     grid-area: bg;
     z-index: -1;
-    content: "";
+    content: '';
     height: 15px;
     background: #f0898b;
     margin-top: -20px;
@@ -90,7 +89,7 @@ const Tech = styled.span`
 
 const Button = styled.button`
   outline: 0;
-  background: #6059FF;
+  background: #6059ff;
   color: #fff;
   font-size: 1rem;
   padding: 1rem;

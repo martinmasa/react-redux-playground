@@ -23,6 +23,7 @@ const language = navigator.language.split(/[-_]/)[0];
 ReactDOM.render(
   <IntlProvider locale={language} messages={messages[language]}>
     <App />
-  </IntlProvider>, document.getElementById('root')
+  </IntlProvider>,
+  document.getElementById('root')
 );
 registerServiceWorker();

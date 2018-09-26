@@ -10,7 +10,7 @@ class Toggle extends React.Component {
     this.setState((prevState) => ({
       on: !prevState.on
     }));
-  }
+  };
 
   render() {
     const { children } = this.props;

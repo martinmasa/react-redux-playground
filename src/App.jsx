@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Switch
-} from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
-
 
 import HelloApp from './HelloApp';
 import SkypeyApp from './SkypeyApp';
@@ -42,7 +36,9 @@ const Home = () => {
         />
       </H1>
       {routes.map((route) => (
-        <AppLink key={route.key} to={route.path}>{route.key}</AppLink>
+        <AppLink key={route.key} to={route.path}>
+          {route.key}
+        </AppLink>
       ))}
     </HomeContainer>
   );
@@ -56,11 +52,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             {routes.map((route) => (
-              <Route
-                key={route.key}
-                path={route.path}
-                component={route.component}
-              />
+              <Route key={route.key} path={route.path} component={route.component} />
             ))}
             {/* <Redirect from="/" to="/skypey" /> */}
           </Switch>
@@ -87,7 +79,7 @@ const H1 = styled.h1`
 `;
 
 const AppLink = styled(Link)`
-  background: #6059FF;
+  background: #6059ff;
   padding: 20px;
   color: white;
   font-weight: bold;

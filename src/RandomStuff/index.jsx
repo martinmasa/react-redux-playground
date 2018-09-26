@@ -3,13 +3,14 @@ import styled from 'styled-components';
 
 import Toggle from './ToggleRP';
 import Portal from './Portal';
+import Modal from './Modal';
 
 class Random extends React.Component {
   render() {
     return (
       <RandomContainer>
         <h1>Random</h1>
-
+        <Modal />
         <Toggle>
           {({ on, toggle }) => (
             <div>
@@ -21,7 +22,9 @@ class Random extends React.Component {
                   </Portal>
                 </React.Fragment>
               )}
-              <button type="button" onClick={toggle}>Toggle</button>
+              <button type="button" onClick={toggle}>
+                Toggle
+              </button>
             </div>
           )}
         </Toggle>

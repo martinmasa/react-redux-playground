@@ -1,4 +1,3 @@
-
 export const SET_TECHNOLOGY = 'hello/SET_TECHNOLOGY';
 
 const initialState = {
