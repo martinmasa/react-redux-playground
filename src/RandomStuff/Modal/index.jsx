@@ -16,10 +16,13 @@ class Modal extends React.Component {
       <Portal>
         {on && (
           <ModalWrapper>
-            <button type="button" onClick={toggle}>
-              Close
-            </button>
-            <div>{children}</div>
+            <ModalCard>
+              <CloseButton type="button" onClick={toggle}>
+                Close
+              </CloseButton>
+              <div>{children}</div>
+            </ModalCard>
+            <Overlay />
           </ModalWrapper>
         )}
       </Portal>
@@ -35,5 +38,34 @@ const ModalWrapper = styled.section`
   left: 0;
   width: 100%;
   height: 100%;
-  background: teal;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+`;
+
+const ModalCard = styled.div`
+  position: relative;
+  background: white;
+  border-radius: 5px;
+  padding: 15px;
+  z-index: 10;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 200px;
+  min-width: 320px;
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
 `;

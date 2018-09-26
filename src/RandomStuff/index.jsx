@@ -23,7 +23,7 @@ class Random extends React.Component {
             <div>
               {on && (
                 <Modal on={on} toggle={toggle}>
-                  <h1>Still in a modal</h1>
+                  <h1>In a modal...</h1>
                 </Modal>
               )}
               <button type="button" onClick={toggle}>
