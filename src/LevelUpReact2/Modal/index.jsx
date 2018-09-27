@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Portal from '../Portal';
+import Icon from '../Icon';
 
 // React portal demo
 class Modal extends React.Component {
@@ -18,7 +19,7 @@ class Modal extends React.Component {
           <ModalWrapper>
             <ModalCard>
               <CloseButton type="button" onClick={toggle}>
-                Close
+                <Icon name="close" color="grey" />
               </CloseButton>
               <div>{children}</div>
             </ModalCard>
@@ -58,6 +59,9 @@ const CloseButton = styled.button`
   position: absolute;
   top: 0;
   right: 0;
+  border: none;
+  background: transparent;
+  padding: 10px;
 `;
 
 const Overlay = styled.div`
