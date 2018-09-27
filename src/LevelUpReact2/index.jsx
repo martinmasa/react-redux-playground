@@ -1,15 +1,14 @@
 import React from 'react';
 import styled, { injectGlobal } from 'styled-components';
 
-import Toggle from './ToggleRP';
-import Modal from './Modal';
+import { Toggle, Modal } from './Utilities';
 
 injectGlobal([
   `
   #root {
     min-height: 100px;
   }
-`
+  `
 ]);
 
 class LevelUpReact2 extends React.Component {
