@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { injectGlobal } from 'styled-components';
 
-import { Toggle, Modal } from './Utilities';
+import { Modal } from './Elements';
+import { Toggle } from './Utilities';
 
 injectGlobal([
   `

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Portal from '../Portal';
+import { Portal } from '../../Utilities';
+import { Card } from '../Card';
 import Icon from '../Icon';
 
 // React portal demo
@@ -44,13 +45,9 @@ const ModalWrapper = styled.section`
   align-items: center;
 `;
 
-const ModalCard = styled.div`
+const ModalCard = styled(Card)`
   position: relative;
-  background: white;
-  border-radius: 5px;
-  padding: 15px;
   z-index: 10;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 200px;
   min-width: 320px;
 `;
