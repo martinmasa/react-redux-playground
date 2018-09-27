@@ -12,11 +12,11 @@ injectGlobal([
 `
 ]);
 
-class Random extends React.Component {
+class LevelUpReact2 extends React.Component {
   render() {
     return (
-      <RandomContainer>
-        <h1>Random</h1>
+      <LevelUpReact2Container>
+        <h1>LevelUpReact2</h1>
         <Modal />
         <Toggle>
           {({ on, toggle }) => (
@@ -32,14 +32,14 @@ class Random extends React.Component {
             </div>
           )}
         </Toggle>
-      </RandomContainer>
+      </LevelUpReact2Container>
     );
   }
 }
 
-export default Random;
+export default LevelUpReact2;
 
-const RandomContainer = styled.section`
+const LevelUpReact2Container = styled.section`
   text-align: center;
   display: grid;
   grid-gap: 30px;

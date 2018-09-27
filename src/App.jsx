@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import HelloApp from './HelloApp';
 import SkypeyApp from './SkypeyApp';
-import Random from './RandomStuff';
+import LevelUpReact2 from './LevelUpReact2';
 
 const routes = [
   {
@@ -14,9 +14,9 @@ const routes = [
     component: HelloApp
   },
   {
-    key: 'random',
-    path: '/random',
-    component: Random
+    key: 'LUT-React2',
+    path: '/levelup-react2',
+    component: LevelUpReact2
   },
   {
     key: 'skypey',
@@ -66,7 +66,7 @@ export default App;
 
 const HomeContainer = styled.main`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 10px 0;
   width: 750px;
   margin: 20px auto;
