@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Portal } from '../../Utilities';
+import { Portal, absolute } from '../../Utilities';
 import { Card } from '../Card';
 import Icon from '../Icon';
 
@@ -35,9 +35,7 @@ class Modal extends React.Component {
 export default Modal;
 
 const ModalWrapper = styled.section`
-  position: absolute;
-  top: 0;
-  left: 0;
+  ${absolute({})};
   width: 100%;
   height: 100%;
   display: grid;
@@ -53,18 +51,14 @@ const ModalCard = styled(Card)`
 `;
 
 const CloseButton = styled.button`
-  position: absolute;
-  top: 0;
-  right: 0;
+  ${absolute({ x: 'right' })};
   border: none;
   background: transparent;
   padding: 10px;
 `;
 
 const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+  ${absolute({})};
   width: 100%;
   height: 100%;
   background: black;
