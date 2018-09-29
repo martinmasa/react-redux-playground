@@ -8,6 +8,8 @@ import messages_en from './translations/en.json';
 import messages_es from './translations/es.json';
 import registerServiceWorker from './registerServiceWorker';
 
+import 'typeface-roboto/index.css';
+
 import './base.style';
 import App from './App';
 
