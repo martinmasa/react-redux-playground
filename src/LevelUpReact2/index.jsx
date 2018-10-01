@@ -3,6 +3,8 @@ import styled, { injectGlobal } from 'styled-components';
 
 import { Modal } from 'LevelUpReact2/Elements';
 import { Toggle } from 'LevelUpReact2/Utilities';
+import { UserProvider } from './UserContext';
+import User from './components/User';
 
 injectGlobal([
   `
@@ -15,24 +17,26 @@ injectGlobal([
 class LevelUpReact2 extends React.Component {
   render() {
     return (
-      <LevelUpReact2Container>
-        <h1>LevelUpReact2</h1>
-        <Modal />
-        <Toggle>
-          {({ on, toggle }) => (
-            <div>
-              {on && (
-                <Modal on={on} toggle={toggle}>
-                  <h1>In a modal...</h1>
-                </Modal>
-              )}
-              <button type="button" onClick={toggle}>
-                Open
-              </button>
-            </div>
-          )}
-        </Toggle>
-      </LevelUpReact2Container>
+      <UserProvider>
+        <LevelUpReact2Container>
+          <h1>LevelUpReact2</h1>
+          <User />
+          <Toggle>
+            {({ on, toggle }) => (
+              <div>
+                {on && (
+                  <Modal on={on} toggle={toggle}>
+                    <h1>In a modal...</h1>
+                  </Modal>
+                )}
+                <button type="button" onClick={toggle}>
+                  Open
+                </button>
+              </div>
+            )}
+          </Toggle>
+        </LevelUpReact2Container>
+      </UserProvider>
     );
   }
 }
