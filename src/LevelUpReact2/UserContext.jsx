@@ -10,6 +10,15 @@ export class UserProvider extends React.Component {
     }
   };
 
+  logout = () => {
+    this.setState({
+      user: {
+        id: null,
+        name: ''
+      }
+    });
+  };
+
   render() {
     const { user } = this.state;
     const { children } = this.props;
@@ -17,7 +26,8 @@ export class UserProvider extends React.Component {
     return (
       <UserContext.Provider
         value={{
-          user
+          user,
+          logout: this.logout
         }}
       >
         {children}

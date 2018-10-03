@@ -8,7 +8,10 @@ class User extends Component {
         {(context) => (
           <div>
             <h3>User</h3>
-            {context.user.name}
+            <p>{context.user.name}</p>
+            <button type="button" onClick={context.logout}>
+              Logout
+            </button>
           </div>
         )}
       </UserContext.Consumer>
