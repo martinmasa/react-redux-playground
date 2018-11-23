@@ -10,7 +10,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 import 'typeface-roboto/index.css';
 
-import './base.style';
 import App from './App';
 
 addLocaleData([...locale_en, ...locale_es]);

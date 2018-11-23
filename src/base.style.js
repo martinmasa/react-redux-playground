@@ -1,11 +1,16 @@
 /* eslint no-unused-expressions: 0 */
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-export default injectGlobal`
+export default createGlobalStyle`
   html,
   body {
+    box-sizing: border-box;
     height: 100%;
     width: 100%;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
   }
 
    body {

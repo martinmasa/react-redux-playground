@@ -1,18 +1,10 @@
 import React from 'react';
-import styled, { injectGlobal } from 'styled-components';
+import styled from 'styled-components';
 
 import { Modal } from 'LevelUpReact2/Elements';
 import { Toggle } from 'LevelUpReact2/Utilities';
 import { UserProvider } from './UserContext';
 import User from './components/User';
-
-injectGlobal([
-  `
-  #root {
-    min-height: 100px;
-  }
-  `
-]);
 
 class LevelUpReact2 extends React.Component {
   render() {

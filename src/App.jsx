@@ -3,6 +3,8 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
+import GlobalStyle from './base.style';
+
 import HelloApp from './HelloApp';
 import SkypeyApp from './SkypeyApp';
 import LevelUpReact2 from './LevelUpReact2';
@@ -28,6 +30,7 @@ const routes = [
 const Home = () => {
   return (
     <HomeContainer>
+      <GlobalStyle />
       <H1>
         <FormattedMessage
           id="home.header"
